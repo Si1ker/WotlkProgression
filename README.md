@@ -5,7 +5,7 @@
 ## Contents
 
 | File/Folder               | Description            | Arena season |
-|---------------------------|---------------------------------------|
+|---------------------------|------------------------|--------------|
 | `phase 2 - patch 3.0/`    | Naxxramas Tier         |      5       |
 | `phase 3 - patch 3.1/`    | Ulduar Tier            |      6       |
 | `phase 4 - patch 3.2/`    | Trial of Crusader Tier |      7       |
