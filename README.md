@@ -6,12 +6,12 @@
 
 | File/Folder               | Description            | Arena season |
 |---------------------------|---------------------------------------|
-| `phase 2 - patch 3.0/`    | Naxxramas Tier         | 5 |
-| `phase 3 - patch 3.1/`    | Ulduar Tier            | 6 |
-| `phase 4 - patch 3.2/`    | Trial of Crusader Tier | 7 |
-| `phase 5 - patch 3.3/`    | Icecrown Citadel       | 8 |
-| `phase 5 - patch 3.3.5a/` | Rubi Sanctum           | - |
-| `README.md`               | This README file       | - |
+| `phase 2 - patch 3.0/`    | Naxxramas Tier         |      5       |
+| `phase 3 - patch 3.1/`    | Ulduar Tier            |      6       |
+| `phase 4 - patch 3.2/`    | Trial of Crusader Tier |      7       |
+| `phase 5 - patch 3.3/`    | Icecrown Citadel       |      8       |
+| `phase 5 - patch 3.3.5a/` | Rubi Sanctum           |      -       |
+| `README.md`               | This README file       |      -       |
 
 ## Contributing
 
