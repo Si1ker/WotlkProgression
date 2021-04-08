@@ -4,14 +4,13 @@
 
 ## Contents
 
-| File/Folder     | Description            | Arena season |
-|-----------------|------------------------|--------------|
-| `patch 3.0/`    | Naxxramas Tier         |      5       |
-| `patch 3.1/`    | Ulduar Tier            |      6       |
-| `patch 3.2/`    | Trial of Crusader Tier |      7       |
-| `patch 3.3/`    | Icecrown Citadel       |      8       |
-| `patch 3.3.5a/` | Rubi Sanctum           |      -       |
-| `README.md`     | This README file       |      -       |
+| Folder          | Content tier      | Tier | Arena season |
+|-----------------|-------------------|------|--------------|
+| `patch 3.0/`    | Naxxramas         | T7   | 5            |
+| `patch 3.1/`    | Ulduar            | T8   | 6            |
+| `patch 3.2/`    | Trial of Crusader | T9   | 7            |
+| `patch 3.3/`    | Icecrown Citadel  | T10  | 8            |
+| `patch 3.3.5a/` | Rubi Sanctum      | -    | -            |
 
 ## Contributing
 
