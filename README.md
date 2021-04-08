@@ -4,7 +4,7 @@
 
 ## Contents
 
-| Folder          | Content tier      | Tier | Arena season |
+| Folder          | Content           | Tier | Arena season |
 |-----------------|-------------------|------|--------------|
 | `patch 3.0/`    | Naxxramas         | T7   | 5            |
 | `patch 3.1/`    | Ulduar            | T8   | 6            |
