@@ -1,24 +1,19 @@
-# SapphironPortal
-Author: [Silker](https://github.com/Si1ker)
+# Patch 3.0
 
-Naxxramas customization to make a Sapphiron's portal pre-ICC version on an AzerothCore based server.
+### Summary:
+- New continent: Northrend
+- New dungeons: Woltk dungeons
+- Max level incresed to 80
+- New class: Death Knights
+- New Raids: Naxxaramas - Eye of Eternity - Obsidian Sanctum - Obsidian Sanctum - Vault of Archavon: Archavon
+- New arenas: Dalaran Arena - The Circle of Valor
+- Arena Season 5: Savage - Hateful and Deadly
 
+### Steps:
 
-### Sapphiron's portal pre-ICC version
+1- Apply the changes as shown in [Sapphironportal](https://github.com/Si1ker/WoltkProgression/tree/main/patch%203.0/SapphironPortal)
+2- Apply [set version](https://github.com/Si1ker/WoltkProgression/blob/0de5dcc6809d9aeb92ab1e750bf763a863820c00/patch%203.0/set%20version.sql) into your wolrd table
+3- Under your [worldserver.conf.](https://github.com/azerothcore/azerothcore-wotlk/blob/81301c67d95a1e51bd269e8f4a49f373ecefeb42/src/server/worldserver/worldserver.conf.dist), perform the following change:
 
-These files/changes will help you to make the Sapphiron's Portal in your World of Warcraft 3.3.5a server to be active
-only after the four end-wing bosses have been defeated as it was before the version 3.3
+[https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/worldserver/worldserver.conf.dist#L3019](Arena.ArenaSeason.ID = 8)
 
-![image](https://user-images.githubusercontent.com/61223313/113535683-63acd600-9591-11eb-8c51-3591255ab6b0.png)
-
-NOTE: This process is intended for [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk) based servers.
-
-Steps:
-
-1- Run the sql update file into the "world" table of your DB
-[Portal.sql](https://github.com/Si1ker/WoltkProgression/blob/1194957ffad887aab9521e2d2e58ab2a48f292aa/phase%201%20-%20patch%203.0%20-%20Naxxramas/SapphironPortal/Portal.sql)
-
-2- Do the additions to your "instance_naxxaramas.cpp" file as shown in [Portal.cpp](https://github.com/Si1ker/WoltkProgression/blob/1194957ffad887aab9521e2d2e58ab2a48f292aa/phase%201%20-%20patch%203.0%20-%20Naxxramas/SapphironPortal/Portal.cpp)
-
-### Is something not working?
-Please let me know by [opening a report](https://github.com/Si1ker/WoltkProgression/issues/new) and I will make sure to fix it at my earliest convenience.
