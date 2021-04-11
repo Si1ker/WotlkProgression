@@ -1,4 +1,5 @@
 # WoltkProgression
+Author: [Silker](https://github.com/Si1ker)
 - This repository contains all the files required to emulate the progression on World of Warcraft private servers running on [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk), from the version 3.0 to 3.3.5a
 - Each folder contains its own README file which will guide you on how to manage the changes and will describe what to expect from those changes.
 
@@ -16,5 +17,5 @@
 
 You are suggested to [open an issue](https://github.com/Si1ker/WoltkProgression/issues/new) if you find any problem with the queries or if any change is not correct.
 
-### WARNING: Work in progress
+### WARNING: Work in progress - 10% completed
 
