@@ -7,7 +7,7 @@
 - New class: Death Knights
 - New Raids: Naxxaramas - Eye of Eternity - Obsidian Sanctum - Obsidian Sanctum - Vault of Archavon: Archavon
 - New arenas: Dalaran Arena - The Circle of Valor
-- Arena Season 5: Savage - Hateful and Deadly
+- Arena Season 5: Savage - Hateful - Deadly
 
 ### Steps:
 

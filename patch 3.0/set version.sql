@@ -11,32 +11,25 @@ INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, 
 (2, 249, 3, "", "", "Onyxia"),
 (2, 724, 15, "", "", "Rubi Sanctum");
 
--- Hide Emalon, Koralon and Toravon
-UPDATE `creature` SET `phaseMask` = 2 WHERE `id` = 33993; -- Emalon
-UPDATE `creature` SET `phaseMask` = 2 WHERE `id` = 35013; -- Koralon
-UPDATE `creature` SET `phaseMask` = 2 WHERE `id` = 38433; -- Toravon
+-- = = = = = = = = = = = =
+-- = = Dalaran changes = =
+-- = = = = = = = = = = = =
 
 -- Hide emblem vendores at Dalaran
 UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (33964, 33963); -- conquest ali/horde
 UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (35494, 35495); -- triumph ali/horde
 UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (37942, 37941); -- frost ali/horde
 
--- Hide gear vendors at Dalaran
-/* 35496 | phase4 - triunfo/escarcha (cloth)
-35497 | triunfo/escarcha (leather)
-35500 | triunfo/escarcha (mail)
-35498 | triunfo/escarcha (plate)
-34252 | triunfo/tokens (plate) */
+-- Hide emblem gear vendors at Dalaran
 UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (35496, 35497, 35500, 35498, 34252);
 
 -- Hide ForgeOfSouls quest givers at Dalaran
-/* 37780 | Forestal oscura Vorel
-37776 | Aprendiza Nelphi */
 UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (37780, 37776);
 
--- = = = = = = = = = = = = = = = =
--- = = = = Dungeon Finder = = = =
--- = = = = = = = = = = = = = = = =
+
+-- = = = = = = = = = = =
+-- = = Dungeon Finder = =
+-- = = = = = = = = = = =
 
 -- heroism: 40752 | valor: 40753 | conquest: 45624 | triumph: 47241 | frost: 49426
 -- => This will change the rewards of emblems once a woltk dungeon is completed <=
@@ -47,335 +40,185 @@ UPDATE `quest_template` SET `RewardItem1`=40752 WHERE `ID`=24790;
 -- After first heroic dungeon of the day | N/A --------
 UPDATE `quest_template` SET `RewardItem1`=0 WHERE `ID`=24791;
 
-
 -- = = Heroic = =
 -- First heroic of the day | 2 emblems de valor --------
 UPDATE `quest_template` SET `RewardItem1`=40753 WHERE `ID`=24788;
 -- After first heroic dungeon of the day | 2 emblems of heroism --------
 UPDATE `quest_template` SET `RewardItem1`=40752 WHERE `ID`=24789;
 
--- = = = = = = = = = = = = = = = =
--- = = = = = = = = = = = = = = = =
 
-
-
+-- = = = = = = = = = = = = = = =
+-- = = General world changes = =
+-- = = = = = = = = = = = = = = =
 
 -- Hide PvP vendors at Stormwind and Orgrimmar
 UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (34060, 34063, 34038); -- Horde
 UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (34075, 34084, 34078); -- Alliance
 
 
+-- = = = = = = = = =
+-- = = Instances = =
+-- = = = = = = = = =
 
+-- Hide Emalon, Koralon and Toravon
+UPDATE `creature` SET `phaseMask` = 2 WHERE `id` = 33993; -- Emalon
+UPDATE `creature` SET `phaseMask` = 2 WHERE `id` = 35013; -- Koralon
+UPDATE `creature` SET `phaseMask` = 2 WHERE `id` = 38433; -- Toravon
 
-
-
-
-
-
-
-
-
-
-
--- Tabla de emblemas
--- Emblema de heroísmo: 40752
--- Emblema de valor: 40753
--- Emblema de conquista: 45624
--- Emblema de triunfo: 47241
--- Emblema de escarcha: 49426
-
---------------------------------------------
-
--- Buscar boss de 25 basado en ID original de 10. El difficulty_entry_1 es el ID del boss en 25
--- SELECT Entry,name,difficulty_entry_1 from creature_template where Entry=Boss 10ID;
-
-
--- Esto cambia los emblemas que lotea cada boss en contenido heroico de woltk de triunfo a heroismo
 
 -- - - - - - - - - Ahn kahet: The Old Kingdom - - - - - - - -
-
 -- Amanitar: 31463
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31463 AND `Item`=47241;
-
 -- Elder Nadox: 31456
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31456 AND `Item`=47241;
-
 -- Herald Volazj: 31464
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31464 AND `Item`=47241;
-
 -- Jedoga Shadowseeker: 31465
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31465 AND `Item`=47241;
-
 -- Prince Taldaram: 31469
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31469 AND `Item`=47241;
 
-
-
-
 --  - - - - - - - - Azjol-Nerub - - - - - - - -
-
 -- Anub arak: 31610
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31610 AND `Item`=47241;
-
 -- Hadronox: 31611
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31611 AND `Item`=47241;
-
 -- Krik thir the Gatewatcher: 31612
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31612 AND `Item`=47241;
 
 
-
-
 --  - - - - - - - - Drak Tharon Keep - - - - - - - -
-
 -- King Dred: 31349
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31349 AND `Item`=47241;
-
 -- Novos the Summoner: 31350
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31350 AND `Item`=47241;
-
 -- Trollgore: 26630
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=26630 AND `Item`=47241;
 
-
-
-
 --  - - - - - - - - Gundrak - - - - - - - -
-
 -- Gal darah: 31368
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31368 AND `Item`=47241;
-
 -- Moorabi: 30530
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30530 AND `Item`=47241;
-
 -- Slad ran : 31370
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31370 AND `Item`=47241;
-
 -- Drakkari Elemental: 31367
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31367 AND `Item`=47241;
-
 -- Eck the Ferocious: 29932
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=29932 AND `Item`=47241;
 
-
-
-
 --  - - - - - - - - Halls of Lightning - - - - - - - -
-
 -- General Bjarngrim: 31533
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31533 AND `Item`=47241;
-
 -- Ionar: 31537
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31537 AND `Item`=47241;
-
 -- Loken: 31538
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31538 AND `Item`=47241;
-
 -- Volkhan: 31536
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31536 AND `Item`=47241;
 
-
-
-
 --  - - - - - - - - Halls of Stone - - - - - - - -
-
 -- Krystallus: 31381
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31381 AND `Item`=47241;
-
 -- Maiden of Grief: 31384
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31384 AND `Item`=47241;
-
 -- Sjonnir The Ironshaper: 31386
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31386 AND `Item`=47241;
-
 -- Tribunal Chest: 26260 (gameobject_loot_template)
 UPDATE `gameobject_loot_template` SET `Item`=40752 WHERE `Entry`=26260 AND `Item`=47241;
 
-
-
-
 --  - - - - - - - - The Culling of Stratholme - - - - - - - -
-
 -- Meathook: 31211
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31211 AND `Item`=47241;
-
 -- Salramm the Fleshcrafter: 31212
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31212 AND `Item`=47241;
-
 -- Chrono-Lord Epoch: 31215
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31215 AND `Item`=47241;
-
 -- Infinite Corruptor: 32313
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=32313 AND `Item`=47241;
-
 -- Mal Ganis (Dark Runed chest) : 24589
 UPDATE `gameobject_loot_template` SET `Item`=40752 WHERE `Entry`=24589 AND `Item`=47241;
 
-
-
-
 --  - - - - - - - - The Nexus - - - - - - - -
-
 -- Anomalus: 30529
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30529 AND `Item`=47241;
-
 -- Commander Stoutbeard: 30398
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30398 AND `Item`=47241;
-
 -- Commander Kolurg: 30397
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30397 AND `Item`=47241;
-
 -- Grand Magus Telestra: 30510
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30510 AND `Item`=47241;
-
 -- Keristrasza: 30540
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30540 AND `Item`=47241;
-
 -- Ormorok the Tree-Shaper: 30532
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30532 AND `Item`=47241;
 
-
-
-
 -- - - - - - - - - The Oculus - - - - - - - -
-
 -- Varos Cloudstrider: 31559
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31559 AND `Item`=47241;
-
 -- Mage-Lord Urom: 31560
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31560 AND `Item`=47241;
-
 -- Ley-Guardian Eregos (Cache of Eregos) : 24524
 UPDATE `gameobject_loot_template` SET `Item`=40752 WHERE `Entry`=24524 AND `Item`=47241;
-
 -- Drakos the Interrogator: 31558
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31558 AND `Item`=47241;
 
-
-
-
 -- - - - - - - - - Utgarde Keep - - - - - - - -
-
 -- Prince Keleseth: 30748
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30748 AND `Item`=47241;
-
 -- Skarvald the Constructor: 31679
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31679 AND `Item`=47241;
-
 -- Dalronn the Controller: 31656
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31656 AND `Item`=47241;
-
 -- Ingvar the Plunderer: 31673
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31673 AND `Item`=47241;
 
-
-
-
 -- - - - - - - - - Utgarde Pinnacle - - - - - - - -
-
 -- Svala Sorrowgrave: 30810
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30810 AND `Item`=47241;
-
 -- Gortok Palehoof: 30774
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30774 AND `Item`=47241;
-
 -- Skadi the Ruthless: 30807
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30807 AND `Item`=47241;
-
 -- King Ymiron: 30788
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=30788 AND `Item`=47241;
 
-
-
-
 -- - - - - - - - - The Violet Hold - - - - - - - -
-
 -- Erekem: 31507
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31507 AND `Item`=47241;
-
 -- Moragg: 31510
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31510 AND `Item`=47241;
-
 -- Ichoron: 31508
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31508 AND `Item`=47241;
-
 -- Xevozz: 31511
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31511 AND `Item`=47241;
-
 -- Lavanthor: 31509
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31509 AND `Item`=47241;
-
 -- Zuramat the Obliterator: 31512
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31512 AND `Item`=47241;
-
 -- Cyanigosa: 31506
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31506 AND `Item`=47241;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- Tabla de emblemas
--- Emblema de heroísmo: 40752
--- Emblema de valor: 40753
--- Emblema de conquista: 45624
--- Emblema de triunfo: 47241
--- Emblema de escarcha: 49426
-
--- ------------------
-
--- Buscar boss de 25 basado en ID original de 10. El difficulty_entry_1 es el ID del boss en 25
--- SELECT Entry,name,difficulty_entry_1 from creature_template where Entry=Boss 10ID;
-
-
--- Esto cambia los emblemas que lotea cada boss en contenido heroico de woltk de triunfo a heroismo
-
 -- - - - - - - - - Cámara de Archavon - - - - - - - -
-
 -- Archavon el Vigía de Piedra (10): 31125
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=31125 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=31125 AND `Item`=40752;
-
 -- Archavon el Vigía de Piedra (25): 31722
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=31722 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=31722 AND `Item`=40753;
 -- = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
-
 --  - - - - - - - - El Ojo de la Eternidad - - - - - - - -
-
 -- Malygos (10): 26094 (data1)
 UPDATE `gameobject_loot_template` SET `Item`=40752 WHERE `Entry`=26094 AND `Item`=47241;
 UPDATE `gameobject_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=26094 AND `Item`=40752;
-
 -- Malygos (25): 26097 (data1)
 UPDATE `gameobject_loot_template` SET `Item`=40753 WHERE `Entry`=26097 AND `Item`=47241;
 UPDATE `gameobject_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=26097 AND `Item`=40753;
 -- = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-
 
 
 --  - - - - - - - - Naxxramas - - - - - - - -
@@ -383,174 +226,109 @@ UPDATE `gameobject_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=
 -- Anub'Rekhan (10): 15956
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15956 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15956 AND `Item`=40752;
-
 -- Anub'Rekhan (25): 29249
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29249 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29249 AND `Item`=40753;
-
 -- Grand Widow Faerlina (10): 15953
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15953 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15953 AND `Item`=40752;
-
 -- Grand Widow Faerlina (25): 29268
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29268 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29268 AND `Item`=40753;
-
 -- Maexxna (10): 15952
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15952 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15952 AND `Item`=40752;
-
 -- Maexxna (25): 29278
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29278 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29278 AND `Item`=40753;
-
 -- Noth the Plaguebringer (10): 15954
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15954 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15954 AND `Item`=40752;
-
 -- Noth the Plaguebringer (25): 29615
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29615 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29615 AND `Item`=40753;
-
 -- Heigan the Unclean (10): 15936
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15936 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15936 AND `Item`=40752;
-
 -- Heigan the Unclean (25): 29701
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29701 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29701 AND `Item`=40753;
-
 -- Loatheb (10): 16011
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=16011 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=16011 AND `Item`=40752;
-
 -- Loatheb (25): 29718
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29718 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29718 AND `Item`=40753;
-
 -- Instructor Razuvious (10): 16061
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=16061 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=16061 AND `Item`=40752;
-
 -- Instructor Razuvious (25): 29940
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29940 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29940 AND `Item`=40753;
-
 -- Gothik the Harvester (10): 16060
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=16060 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=16060 AND `Item`=40752;
-
 -- Gothik the Harvester (25): 29955
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29955 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29955 AND `Item`=40753;
-
 -- Four Horsemen (10): 25192 (data1)
 UPDATE `gameobject_loot_template` SET `Item`=40752 WHERE `Entry`=25192 AND `Item`=47241;
 UPDATE `gameobject_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=25192 AND `Item`=40752;
-
 -- Four Horsemen (25): 25193 (data1)
 UPDATE `gameobject_loot_template` SET `Item`=40753 WHERE `Entry`=25193 AND `Item`=47241;
 UPDATE `gameobject_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=25193 AND `Item`=40753;
-
 -- Patchwerk (10): 16028
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=16028 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=16028 AND `Item`=40752;
-
 -- Patchwerk (25): 29324
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29324 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29324 AND `Item`=40753;
-
 -- Grobbulus (10): 15931
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15931 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15931 AND `Item`=40752;
-
 -- Grobbulus (25): 29373
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29373 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29373 AND `Item`=40753;
-
 -- Gluth (10): 15932
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15932 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15932 AND `Item`=40752;
-
 -- Gluth (25): 29417
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29417 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29417 AND `Item`=40753;
-
 -- Thaddius (10): 15928
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15928 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15928 AND `Item`=40752;
-
 -- Thaddius (25): 29448
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29448 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29448 AND `Item`=40753;
-
 -- Sapphiron (10): 15989
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15989 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15989 AND `Item`=40752;
-
 -- Sapphiron (25): 29991
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=29991 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=29991 AND `Item`=40753;
-
 -- Kel'Thuzad (10): 15990
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=15990 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MinCount`=2, `MaxCount`=2 WHERE  `Entry`=15990 AND `Item`=40752;
-
 -- Kel'Thuzad (25): 30061
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=30061 AND `Item`=47241;
 UPDATE `creature_loot_template` SET `MaxCount`='3' WHERE  `Entry`=30061 AND `Item`=2; -- from 2 tokens to 3
 UPDATE `creature_loot_template` SET `MaxCount`='6' WHERE  `Entry`=30061 AND `Item`=1; -- from 3 gear to 6
 UPDATE `creature_loot_template` SET `MinCount`='4', `MaxCount`='4' WHERE  `Entry`=30061 AND `Item`=47241; -- 4 emblems of valor
 
--- = Kel'Thuzad 25 special reward
-INSERT INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES 
-('30061', '13335', '0', '100', '0', '1', '0', '1', '1', 'Deathcharger\'s Reins');
 -- = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
 
 
 --  - - - - - - - - Santuario obsidiana - - - - - - - -
-
 -- Sartharion (10): 28860
 UPDATE `creature_loot_template` SET `Item`=40752 WHERE `Entry`=28860 AND `Item`=47241;
 UPDATE `item_loot_template` SET `Item`=40752 WHERE `Entry`=43347 AND `Item`=47241; -- Cartera de botin [modo 10]
-
 -- Sartharion (25): 31311
 UPDATE `creature_loot_template` SET `Item`=40753 WHERE `Entry`=31311 AND `Item`=47241; -- Loot de Sartharion
 UPDATE `reference_loot_template` SET `Item`=40753 WHERE  `Entry`=34349 AND `Item`=47241; -- Loot de los Drakes
 UPDATE `item_loot_template` SET `Item`=40753 WHERE `Entry`=43346 AND `Item`=47241; -- Cartera de botin grande [modo 25]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -634,8 +412,6 @@ INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Exte
 ('34040', '0', '36930', '0', '0', '2588', '0'),
 ('34040', '0', '36933', '0', '0', '2588', '0');
 
--- esto reduce la dual spec a 500 de oro instead of 1000g
-UPDATE `gossip_menu_option` SET `BoxMoney` = '5000000' WHERE `OptionType` = 18
 
 
 
@@ -643,44 +419,6 @@ UPDATE `gossip_menu_option` SET `BoxMoney` = '5000000' WHERE `OptionType` = 18
 -- Eso deshabilita que Timothy Jones (28701) sea un vendedor para que no venda las recetas de gemas epicas (+20) al quitarle el flag 128
 
 UPDATE `creature_template` SET `npcflag`='83' WHERE `entry`=28701;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -806,40 +544,6 @@ DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=49000 AND `ExtendedCost
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -- Tabla de emblemas
 -- Emblema de heroísmo: 40752
 -- Emblema de valor: 40753
@@ -913,28 +617,6 @@ DELETE FROM `quest_template` WHERE  `ID`=24590;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 13241
 UPDATE `quest_template` SET `RewardItem1`='40753' WHERE  `ID`=13241;
 
@@ -950,19 +632,6 @@ UPDATE `quest_template` SET `RewardItem1`='40753' WHERE  `ID`=13243;
 -- Fix raid weekly quest loot
 
 24580
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
