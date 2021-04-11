@@ -1,5 +1,5 @@
 # SapphironPortal
-by [Silker](https://github.com/Si1ker\)
+by [Silker](https://github.com/Si1ker)
 
 Naxxramas customization to make a Sapphiron's portal pre-ICC version on an AzerothCore based server.
 
