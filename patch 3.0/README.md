@@ -2,7 +2,7 @@
 
 ### Summary:
 - New continent: Northrend
-- New dungeons: Woltk dungeons
+- New dungeons: Violet Hold - Utgarde Pinnacle - Utgarde Keep - The Nexus - The Oculus - The Culling of Stratholme - Halls of Stone - Halls of Lightning - Gundrak - Drak'Tharon Keep - Azjol-Nerub - Ahn'kahet
 - Max level incresed to 80
 - New class: Death Knights
 - New Raids: Naxxaramas - Eye of Eternity - Obsidian Sanctum - Obsidian Sanctum - Vault of Archavon: Archavon
