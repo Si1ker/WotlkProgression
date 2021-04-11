@@ -1,4 +1,6 @@
 # SapphironPortal
+by [Silker](https://github.com/Si1ker\)
+
 Naxxramas customization to make a Sapphiron's portal pre-ICC version on an AzerothCore based server.
 
 
@@ -14,9 +16,9 @@ NOTE: This process is intended for [AzerothCore](https://github.com/azerothcore/
 Steps:
 
 1- Run the sql update file into the "world" table of your DB
-[Portal.sql](https://github.com/Si1ker/SapphironPortal/blob/0914b4f30e54d9bd63df58a8c54c6f63b6b3018c/Portal.sql)
+[Portal.sql](https://github.com/Si1ker/WoltkProgression/blob/1194957ffad887aab9521e2d2e58ab2a48f292aa/phase%201%20-%20patch%203.0%20-%20Naxxramas/SapphironPortal/Portal.sql)
 
-2- Do the additions to your "instance_naxxaramas.cpp" file as shown in [Portal.cpp](https://github.com/Si1ker/SapphironPortal/blob/0914b4f30e54d9bd63df58a8c54c6f63b6b3018c/Portal.cpp)
+2- Do the additions to your "instance_naxxaramas.cpp" file as shown in [Portal.cpp](https://github.com/Si1ker/WoltkProgression/blob/1194957ffad887aab9521e2d2e58ab2a48f292aa/phase%201%20-%20patch%203.0%20-%20Naxxramas/SapphironPortal/Portal.cpp)
 
 ### Is something not working?
-Please let me know by [opening a report](https://github.com/Si1ker/SapphironPortal/issues/new) and I will make sure to fix it at my earliest convenience.
+Please let me know by [opening a report](https://github.com/Si1ker/WoltkProgression/issues/new) and I will make sure to fix it at my earliest convenience.
