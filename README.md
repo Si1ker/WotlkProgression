@@ -5,17 +5,15 @@ Author: [Silker](https://github.com/Si1ker)
 
 ## Contents
 
-| Folder          | Content           | Tier | Arena season |
-|-----------------|-------------------|------|--------------|
-| `patch 3.0/`    | Naxxramas         | T7   | 5            |
-| `patch 3.1/`    | Ulduar            | T8   | 6            |
-| `patch 3.2/`    | Trial of Crusader | T9   | 7            |
-| `patch 3.3/`    | Icecrown Citadel  | T10  | 8            |
-| `patch 3.3.5a/` | Rubi Sanctum      | -    | -            |
+| Folder          | Content           | Tier | Arena season | Status      |
+|-----------------|-------------------|------|--------------|-------------|
+| `patch 3.0/`    | Naxxramas         | T7   | 5            | Done        |
+| `patch 3.1/`    | Ulduar            | T8   | 6            | In progress |
+| `patch 3.2/`    | Trial of Crusader | T9   | 7            | Pending     |
+| `patch 3.3/`    | Icecrown Citadel  | T10  | 8            | Pending     |
+| `patch 3.3.5a/` | Rubi Sanctum      | -    | -            | Pending     |
 
 ## Contributing
 
 You are suggested to [open an issue](https://github.com/Si1ker/WoltkProgression/issues/new) if you find any problem with the queries or if any change is not correct.
-
-### WARNING: Work in progress - 30% completed
 

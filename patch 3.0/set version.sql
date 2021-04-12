@@ -4,6 +4,7 @@ Written by Silker | https://github.com/Si1ker
 This SQL update file will set your woltk server based on AzerothCore to the version latests 3.0 version
 
 ==== INDEX ====
+Emblems
 Content disables
 Dungeon finder
 Instances
@@ -14,6 +15,16 @@ Weekly and daily quests
 Events
 
 */
+
+-- = = = = = = = = = =
+-- = = = Emblems = = =
+-- = = = = = = = = = =
+
+SET @OldEmblem = 47241; -- triumph (assuming you are applying this to a clean core/db)
+SET @NewLowerEmblem = 40752; -- heroism
+SET @NewHigherEmblem = 40753; -- valor
+-- heroism: 40752 | valor: 40753 | conquest: 45624 | triumph: 47241 | frost: 49426
+
 
 -- = = = = = = = = = = =
 -- = Content disables =
@@ -34,18 +45,14 @@ INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, 
 -- = = = = = = = = = = =
 -- = = Dungeon Finder = =
 -- = = = = = = = = = = =
-SET @OldEmblem = 47241; -- triumph (assuming you are applying this to a clean core/db)
-SET @NewLowerEmblem = 40752; -- heroism
-SET @NewHigherEmblem = 40753; -- valor
--- heroism: 40752 | valor: 40753 | conquest: 45624 | triumph: 47241 | frost: 49426
 
--- = = Normal = =
+/* Normal */
 -- First normal dungeon of the day | 2 emblems de heroism --------
 UPDATE `quest_template` SET `RewardItem1`=@NewLowerEmblem WHERE `ID`=24790;
 -- After first normal dungeon of the day | N/A --------
 UPDATE `quest_template` SET `RewardItem1`=0 WHERE `ID`=24791;
 
--- = = Heroic = =
+/* Heroic */
 -- First heroic of the day | 2 emblems de valor --------
 UPDATE `quest_template` SET `RewardItem1`=@NewHigherEmblem WHERE `ID`=24788;
 -- After first heroic dungeon of the day | 2 emblems of heroism --------
