@@ -422,24 +422,21 @@ DELETE FROM `npc_vendor` WHERE `entry` IN (@StoneGuardMukar, @KnightDameron) AND
 -- = Weekly quests = 
 -- = = = = = = = = =
 
--- Update weekly quests from Archmage Lan'dalock (ID 20735)
-UPDATE `quest_template` SET `RewardItem1`=@NewHigherEmblem, `RewardItem2`=@NewLowerEmblem WHERE `ID` IN (
-24580, -- Anub'Rekhan Must Die!
-24582, -- Instructor Razuvious Must Die!
-24584, -- Malygos Must Die!
-24581, -- Noth the Plaguebringer Must Die!
-24583, -- Patchwerk Must Die!
-24579); --Sartharion Must Die!
-
--- Disable other weekly quests
-DELETE FROM `disables` WHERE `entry` IN (24585, 24587, 24586, 24588, 24589, 24590);
+-- Disable weekly quests from Archmage Lan'dalock
+DELETE FROM `disables` WHERE `entry` IN (24580, 24582, 24584, 24581, 24583, 24579, 24585, 24587, 24586, 24588, 24589, 24590);
 INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`) VALUES 
-(1, 24585, 0, "", "", "WoltkProgression - Disable Flame Leviathan Must Die!"),
-(1, 24587, 0, "", "", "WoltkProgression - Disable Ignis the Furnace Master Must Die!"),
-(1, 24586, 0, "", "", "WoltkProgression - Disable Razorscale Must Die!"),
-(1, 24588, 0, "", "", "WoltkProgression - Disable XT-002 Deconstructor Must Die!"),
-(1, 24589, 0, "", "", "WoltkProgression - Disable Lord Jaraxxus Must Die!"),
-(1, 24590, 0, "", "", "WoltkProgression - Disable Lord Marrowgar Must Die!");
+(1, 24580, 0, "", "", "WoltkProgression - Disable quest - Anub'Rekhan Must Die!"),
+(1, 24582, 0, "", "", "WoltkProgression - Disable quest - Instructor Razuvious Must Die!"),
+(1, 24584, 0, "", "", "WoltkProgression - Disable quest - Malygos Must Die!"),
+(1, 24581, 0, "", "", "WoltkProgression - Disable quest - Noth the Plaguebringer Must Die!"),
+(1, 24583, 0, "", "", "WoltkProgression - Disable quest - Patchwerk Must Die!"),
+(1, 24579, 0, "", "", "WoltkProgression - Disable quest - Sartharion Must Die!"),
+(1, 24585, 0, "", "", "WoltkProgression - Disable quest - Flame Leviathan Must Die!"),
+(1, 24587, 0, "", "", "WoltkProgression - Disable quest - Ignis the Furnace Master Must Die!"),
+(1, 24586, 0, "", "", "WoltkProgression - Disable quest - Razorscale Must Die!"),
+(1, 24588, 0, "", "", "WoltkProgression - Disable quest - XT-002 Deconstructor Must Die!"),
+(1, 24589, 0, "", "", "WoltkProgression - Disable quest - Lord Jaraxxus Must Die!"),
+(1, 24590, 0, "", "", "WoltkProgression - Disable quest - Lord Marrowgar Must Die!");
 
 -- = = = = = = = = =
 -- = = = Events = = = 
