@@ -418,9 +418,9 @@ DELETE FROM `npc_vendor` WHERE `entry` IN (@StoneGuardMukar, @KnightDameron) AND
 49000);
 
 
--- = = = = = = = = =
--- = Weekly quests = 
--- = = = = = = = = =
+-- = = = = = = = = = = = = = =
+-- = Weekly and daily quests =
+-- = = = = = = = = = = = = = =
 
 -- Disable weekly quests from Archmage Lan'dalock
 DELETE FROM `disables` WHERE `entry` IN (24580, 24582, 24584, 24581, 24583, 24579, 24585, 24587, 24586, 24588, 24589, 24590);
@@ -438,8 +438,61 @@ INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, 
 (1, 24589, 0, "", "", "WoltkProgression - Disable quest - Lord Jaraxxus Must Die!"),
 (1, 24590, 0, "", "", "WoltkProgression - Disable quest - Lord Marrowgar Must Die!");
 
+
+-- Enable dungeon daily quests
+
+/* Timear Foresees - Archmage Timear in Dalaran */
+DELETE FROM `creature_queststarter` WHERE `id`=31439;
+INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES 
+(31439, 13240),
+(31439, 13241),
+(31439, 13243),
+(31439, 13244);
+DELETE FROM `creature_questender` WHERE `id`=31439;
+INSERT INTO `creature_questender` (`id`, `quest`) VALUES 
+(31439, 13240),
+(31439, 13241),
+(31439, 13243),
+(31439, 13244);
+UPDATE `quest_template` SET `RewardItem1`=@NewLowerEmblem WHERE `ID` IN (13240,13241,13243,13244);
+
+/* Proof of Demise - Archmage Lan'dalock in Dalaran */
+DELETE FROM `creature_queststarter` WHERE `id`=31439;
+INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES 
+(20735, 13245),
+(20735, 13247),
+(20735, 13249),
+(20735, 13251),
+(20735, 13253),
+(20735, 13255),
+(20735, 13246),
+(20735, 13248),
+(20735, 13250),
+(20735, 13252),
+(20735, 13254),
+(20735, 13256);
+DELETE FROM `creature_questender` WHERE `id`=31439;
+INSERT INTO `creature_questender` (`id`, `quest`) VALUES 
+(20735, 13245),
+(20735, 13247),
+(20735, 13249),
+(20735, 13251),
+(20735, 13253),
+(20735, 13255),
+(20735, 13246),
+(20735, 13248),
+(20735, 13250),
+(20735, 13252),
+(20735, 13254),
+(20735, 13256);
+
+-- Timear Foresees rewards 1 heroism per quest in patch 3.0
+-- Proof of Demise rewards 2 heroism per quest in patch 3.0
+UPDATE `quest_template` SET `RewardItem1`=@NewLowerEmblem WHERE `ID` IN (13240,13241,13243,13244,13245,13247,13249,13251,13253,13255,13246,13248,13250,13252,13254,13256);
+
+
 -- = = = = = = = = =
--- = = = Events = = = 
+-- = = = Events = = =
 -- = = = = = = = = =
 
 -- Loot of "Satchel of Chilled Goods"
