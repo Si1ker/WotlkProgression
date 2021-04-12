@@ -17,5 +17,5 @@ Author: [Silker](https://github.com/Si1ker)
 
 You are suggested to [open an issue](https://github.com/Si1ker/WoltkProgression/issues/new) if you find any problem with the queries or if any change is not correct.
 
-### WARNING: Work in progress - 20% completed
+### WARNING: Work in progress - 30% completed
 
