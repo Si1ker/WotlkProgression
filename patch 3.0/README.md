@@ -21,5 +21,5 @@
 
 4- Change [Arena.ArenaSeason.ID](https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/worldserver/worldserver.conf.dist#L3019) to ```Arena.ArenaSeason.ID = 5```
 
-5- Re-run Cmake, compile & restart your server completely after you have completed the steps.
+5- Re-run Cmake, compile & start your server
 
