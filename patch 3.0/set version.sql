@@ -495,5 +495,10 @@ UPDATE `quest_template` SET `RewardItem1`=@NewLowerEmblem WHERE `ID` IN (13240,1
 -- = = = = = = = = =
 
 -- Loot of "Satchel of Chilled Goods"
-UPDATE `item_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry`=54536 AND `Item`=49426;
+UPDATE `item_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry` IN (
+54536, -- item: Satchel of Chilled Goods / event: Midsummer Fire Festival.
+54535, -- item: Keg-Shaped Treasure Chest / event: Brewfest
+54516, -- item: Loot-Filled Pumpkin / event: Halloween
+54537) -- item: Heart-Shaped Box / event: Love is in the Air
+AND `Item`=49426; -- emblem of frost (assuming you are applying this to a clean core/db)
 
