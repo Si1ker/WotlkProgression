@@ -4,7 +4,7 @@ Written by Silker | https://github.com/Si1ker
 This SQL update file will set your woltk server based on AzerothCore to the version latests 3.0 version
 
 ==== INDEX ====
-Disables
+Content disables
 Dungeon finder
 Instances
 Dalaran changes
@@ -15,9 +15,9 @@ Events
 
 */
 
--- = = = = = = = = =
--- = = Disables = =
--- = = = = = = = = =
+-- = = = = = = = = = = =
+-- = Content disables =
+-- = = = = = = = = = = =
 DELETE FROM `disables` WHERE `entry` IN (631, 658, 668, 632, 650, 649, 603, 249, 724);
 INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`) VALUES 
 (2, 631, 15, "", "", "WoltkProgression - Block ICC raid"),
@@ -362,110 +362,60 @@ UPDATE `creature_template` SET `npcflag`=0 WHERE `entry` IN (
 39172 -- alliance
 );
 
--- ===============================================
--- Eso deshabilita que los vendedores en monturas livianas sean vendedores, item lvl 245 , probablemente en ToC revertir estos cambios
+-- Remove items in heavy mount vendors (items start from item.level 245)
+@SET @StoneGuardMukar = 32296; -- horde
+@SET @KnightDameron = 32294; -- alliance
 
--- Eliminar items de otros contenidos de Guardia de piedra Mutaha (32296)
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46057 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46058 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46059 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46060 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46061 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46062 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46063 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46064 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46065 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46066 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46071 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46072 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46073 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46074 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46075 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46076 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46077 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46078 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46079 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46080 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46081 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46082 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46083 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46084 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46085 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46086 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46087 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=46088 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48974 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48975 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48976 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48977 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48978 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48979 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48980 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48981 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48982 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48983 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48987 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48988 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48990 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48991 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48992 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48993 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48994 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48997 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48998 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=48999 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32296 AND `item`=49000 AND `ExtendedCost`=2577;
-
--- Eliminar items de otros contenidos de Caballero Dameron (32294)
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46057 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46058 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46059 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46060 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46061 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46062 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46063 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46064 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46065 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46066 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46071 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46072 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46073 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46074 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46075 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46076 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46077 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46078 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46079 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46080 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46081 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46082 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46083 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46084 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46085 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46086 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46087 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=46088 AND `ExtendedCost`=2578;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48974 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48975 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48976 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48977 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48978 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48979 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48980 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48981 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48982 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48983 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48987 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48988 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48990 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48991 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48992 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48993 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48994 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48997 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48998 AND `ExtendedCost`=2579;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48999 AND `ExtendedCost`=2577;
-DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=49000 AND `ExtendedCost`=2577;
+DELETE FROM `npc_vendor` WHERE `entry` IN (@StoneGuardMukar, @KnightDameron) AND `item` IN (
+46057,
+46058,
+46059,
+46060,
+46061,
+46062,
+46063,
+46064,
+46065,
+46066,
+46071,
+46072,
+46073,
+46074,
+46075,
+46076,
+46077,
+46078,
+46079,
+46080,
+46081,
+46082,
+46083,
+46084,
+46085,
+46086,
+46087,
+46088,
+48974,
+48975,
+48976,
+48977,
+48978,
+48979,
+48980,
+48981,
+48982,
+48983,
+48987,
+48988,
+48990,
+48991,
+48992,
+48993,
+48994,
+48997,
+48998,
+48999,
+49000);
 
 
 -- = = = = = = = = =
@@ -482,25 +432,19 @@ UPDATE `quest_template` SET `RewardItem1`=@NewHigherEmblem, `RewardItem2`=@NewLo
 24579); --Sartharion Must Die!
 
 -- Disable other weekly quests
--- Flame Leviathan Must Die! | 24585
-DELETE FROM `quest_template` WHERE `ID`=24585;
--- Ignis the Furnace Master Must Die! | 24587
-DELETE FROM `quest_template` WHERE `ID`=24587;
--- Razorscale Must Die! | 24586
-DELETE FROM `quest_template` WHERE `ID`=24586;
--- XT-002 Deconstructor Must Die! | 24588
-DELETE FROM `quest_template` WHERE `ID`=24588;
--- Lord Jaraxxus Must Die! | 24589
-DELETE FROM `quest_template` WHERE `ID`=24589;
--- Lord Marrowgar Must Die! | 24590
-DELETE FROM `quest_template` WHERE `ID`=24590;
-
+DELETE FROM `disables` WHERE `entry` IN (24585, 24587, 24586, 24588, 24589, 24590);
+INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`) VALUES 
+(1, 24585, 0, "", "", "WoltkProgression - Disable Flame Leviathan Must Die!"),
+(1, 24587, 0, "", "", "WoltkProgression - Disable Ignis the Furnace Master Must Die!"),
+(1, 24586, 0, "", "", "WoltkProgression - Disable Razorscale Must Die!"),
+(1, 24588, 0, "", "", "WoltkProgression - Disable XT-002 Deconstructor Must Die!"),
+(1, 24589, 0, "", "", "WoltkProgression - Disable Lord Jaraxxus Must Die!"),
+(1, 24590, 0, "", "", "WoltkProgression - Disable Lord Marrowgar Must Die!");
 
 -- = = = = = = = = =
 -- = = = Events = = = 
 -- = = = = = = = = =
 
--- Loot of "Satchel of Chilled Goods" item 54536
--- Phase 1 (Valor x2)
-
+-- Loot of "Satchel of Chilled Goods"
 UPDATE `item_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry`=54536 AND `Item`=49426;
+
