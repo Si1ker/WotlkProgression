@@ -1,9 +1,23 @@
 /*
+
 Written by Silker | https://github.com/Si1ker
 This SQL update file will set your woltk server based on AzerothCore to the version latests 3.0 version
+
+==== INDEX ====
+Disables
+Dungeon finder
+Instances
+Dalaran changes
+General world changes
+Wintergrasp
+Weekly quests
+Events
+
 */
 
--- Disables
+-- = = = = = = = = =
+-- = = Disables = =
+-- = = = = = = = = =
 DELETE FROM `disables` WHERE `entry` IN (631, 658, 668, 632, 650, 649, 603, 249, 724);
 INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`) VALUES 
 (2, 631, 15, "", "", "WoltkProgression - Block ICC raid"),
@@ -277,7 +291,7 @@ UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (
 40160); -- Hide Frozo the Renowned
 
 
--- Remove rings from Harold Winston
+-- Remove rings of other contents from Harold Winston
 SET @HaroldWinston = 32172;
 -- upgradeitem.level 251 (Added in patch 3.3.0.10772)
 DELETE FROM `npc_vendor` WHERE `entry`=@HaroldWinston AND `item` IN (51560,
@@ -454,112 +468,39 @@ DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=48999 AND `ExtendedCost
 DELETE FROM `npc_vendor` WHERE  `entry`=32294 AND `item`=49000 AND `ExtendedCost`=2577;
 
 
+-- = = = = = = = = =
+-- = Weekly quests = 
+-- = = = = = = = = =
 
+-- Update weekly quests from Archmage Lan'dalock (ID 20735)
+UPDATE `quest_template` SET `RewardItem1`=@NewHigherEmblem, `RewardItem2`=@NewLowerEmblem WHERE `ID` IN (
+24580, -- Anub'Rekhan Must Die!
+24582, -- Instructor Razuvious Must Die!
+24584, -- Malygos Must Die!
+24581, -- Noth the Plaguebringer Must Die!
+24583, -- Patchwerk Must Die!
+24579); --Sartharion Must Die!
 
--- Tabla de emblemas
--- Emblema de heroísmo: 40752
--- Emblema de valor: 40753
--- Emblema de conquista: 45624
--- Emblema de triunfo: 47241
--- Emblema de escarcha: 49426
-
--- ------------------
-
--- NPC: Archmage Lan'dalock | 20735
-
-
--- ========
--- Phase 1
--- ========
-
--- Anub'Rekhan Must Die! | 24580
-UPDATE `quest_template` SET `RewardItem1`='40753', `RewardItem2`='40752' WHERE  `ID`=24580;
-
--- Instructor Razuvious Must Die! | 24582
-UPDATE `quest_template` SET `RewardItem1`='40753', `RewardItem2`='40752' WHERE  `ID`=24582;
-
--- Malygos Must Die! | 24584
-UPDATE `quest_template` SET `RewardItem1`='40753', `RewardItem2`='40752' WHERE  `ID`=24584;
-
--- Noth the Plaguebringer Must Die! | 24581
-UPDATE `quest_template` SET `RewardItem1`='40753', `RewardItem2`='40752' WHERE  `ID`=24581;
-
--- Patchwerk Must Die! | 24583
-UPDATE `quest_template` SET `RewardItem1`='40753', `RewardItem2`='40752' WHERE  `ID`=24583;
-
--- Sartharion Must Die! | 24579
-UPDATE `quest_template` SET `RewardItem1`='40753', `RewardItem2`='40752' WHERE  `ID`=24579;
-
-
--- ========
--- Phase 2 (Disabled)
--- ========
-
+-- Disable other weekly quests
 -- Flame Leviathan Must Die! | 24585
-DELETE FROM `quest_template` WHERE  `ID`=24585;
-
+DELETE FROM `quest_template` WHERE `ID`=24585;
 -- Ignis the Furnace Master Must Die! | 24587
-DELETE FROM `quest_template` WHERE  `ID`=24587;
-
+DELETE FROM `quest_template` WHERE `ID`=24587;
 -- Razorscale Must Die! | 24586
-DELETE FROM `quest_template` WHERE  `ID`=24586;
-
+DELETE FROM `quest_template` WHERE `ID`=24586;
 -- XT-002 Deconstructor Must Die! | 24588
-DELETE FROM `quest_template` WHERE  `ID`=24588;
-
-
--- ========
--- Phase 3 (Disabled)
--- ========
-
+DELETE FROM `quest_template` WHERE `ID`=24588;
 -- Lord Jaraxxus Must Die! | 24589
-DELETE FROM `quest_template` WHERE  `ID`=24589;
-
-
--- ========
--- Phase 4 (Disabled)
--- ========
-
+DELETE FROM `quest_template` WHERE `ID`=24589;
 -- Lord Marrowgar Must Die! | 24590
-DELETE FROM `quest_template` WHERE  `ID`=24590;
+DELETE FROM `quest_template` WHERE `ID`=24590;
 
 
-
-
-
-
-
-13241
-UPDATE `quest_template` SET `RewardItem1`='40753' WHERE  `ID`=13241;
-
-13244
-UPDATE `quest_template` SET `RewardItem1`='40753' WHERE  `ID`=13244;
-
-13240
-UPDATE `quest_template` SET `RewardItem1`='40753' WHERE  `ID`=13240;
-
-13243
-UPDATE `quest_template` SET `RewardItem1`='40753' WHERE  `ID`=13243;
-
--- Fix raid weekly quest loot
-
-24580
-
-
-
-
-
--- Tabla de emblemas
--- Emblema de heroísmo: 40752
--- Emblema de valor: 40753
--- Emblema de conquista: 45624
--- Emblema de triunfo: 47241
--- Emblema de escarcha: 49426
-
--- ------------------
-
+-- = = = = = = = = =
+-- = = = Events = = = 
+-- = = = = = = = = =
 
 -- Loot of "Satchel of Chilled Goods" item 54536
 -- Phase 1 (Valor x2)
 
-UPDATE `item_loot_template` SET `Item`='40753' WHERE  `Entry`=54536 AND `Item`=49426;
+UPDATE `item_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry`=54536 AND `Item`=49426;
