@@ -42,7 +42,7 @@ SET @NewHigherEmblem = 40753; -- valor
 -- = = Normal = =
 -- First normal dungeon of the day | 2 emblems de heroism --------
 UPDATE `quest_template` SET `RewardItem1`=@NewLowerEmblem WHERE `ID`=24790;
--- After first heroic dungeon of the day | N/A --------
+-- After first normal dungeon of the day | N/A --------
 UPDATE `quest_template` SET `RewardItem1`=0 WHERE `ID`=24791;
 
 -- = = Heroic = =
