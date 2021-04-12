@@ -10,7 +10,7 @@ Instances
 Dalaran changes
 General world changes
 Wintergrasp
-Weekly quests
+Weekly and daily quests
 Events
 
 */
@@ -454,7 +454,6 @@ INSERT INTO `creature_questender` (`id`, `quest`) VALUES
 (31439, 13241),
 (31439, 13243),
 (31439, 13244);
-UPDATE `quest_template` SET `RewardItem1`=@NewLowerEmblem WHERE `ID` IN (13240,13241,13243,13244);
 
 /* Proof of Demise - Archmage Lan'dalock in Dalaran */
 DELETE FROM `creature_queststarter` WHERE `id`=31439;
