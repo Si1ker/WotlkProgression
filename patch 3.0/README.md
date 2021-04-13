@@ -21,5 +21,9 @@
 
 4- Change [Arena.ArenaSeason.ID](https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/worldserver/worldserver.conf.dist#L3019) to ```Arena.ArenaSeason.ID = 5```
 
-5- Re-run Cmake, compile and start your server
+5- Change [DungeonFinder.OptionsMask](https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/worldserver/worldserver.conf.dist#L1544) to ```DungeonFinder.OptionsMask = 0```
+
+6- Change [MinDualSpecLevel](https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/worldserver/worldserver.conf.dist#L1117) to ```MinDualSpecLevel = 81```
+
+7- Re-run Cmake, compile and start your server
 
