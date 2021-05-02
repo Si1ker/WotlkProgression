@@ -509,3 +509,74 @@ UPDATE `item_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry` IN (
 54537) -- item: Heart-Shaped Box / event: Love is in the Air
 AND `Item`=49426; -- emblem of frost (assuming you are applying this to a clean core/db)
 
+
+
+
+
+
+-- New stuff from mpfans
+
+
+-- Cardinal Ruby
+update quest_template SET minlevel=90 WHERE id IN (14151);
+
+-- Assault on the Sanctum
+update quest_template SET minlevel=90 WHERE id IN (26013);
+
+-- Usuri Brightcoin <Money Changer>
+update creature_template set flags_extra = 128 WHERE entry = 35790;
+
+-- Transmute
+delete from npc_trainer WHERE spellid IN (66658,66660,66662,66663,66664,67025);
+
+-- Wormhole Generator: Northrend
+delete FROM npc_trainer WHERE spellid IN (67920);
+
+-- Runescroll of Fortitude
+delete FROM npc_trainer WHERE spellid IN (69385);
+
+-- Icy Prism - (ReferenceTable)
+DELETE FROM item_loot_template item_loot_template WHERE entry=44943 and reference =10008;
+
+-- Icy Prism - Dragon's Eye
+DELETE FROM item_loot_template item_loot_template WHERE entry=44943 and item =42225;
+
+-- (ReferenceTable) - Titanium Ore
+DELETE FROM prospecting_loot_template WHERE reference=13005;
+
+-- Drums of the Wild & Drums of Forgotten Kings
+DELETE FROM npc_trainer WHERE spellid IN (69386,69388);
+
+-- For Jewelcrafting Trainers on Shattrath City
+DELETE FROM npc_vendor WHERE entry IN (33680,33637) AND item BETWEEN 46897 AND 49112;
+
+-- Disable Heirloom Vendor
+UPDATE `creature_template` SET flags_extra = 128 WHERE `entry` IN (
+35507, -- Enchanter Isian
+35508); -- Enchanter Erodin
+
+-- Tome of Cold Weather Flight | Added in patch 3.2.0.10192
+delete from npc_vendor where entry=31238;
+
+-- Arcanum of Burning Mysteries | Added in patch 3.3.0.10623
+DELETE FROM npc_vendor WHERE item=50368;
+
+-- Arcanum of Blissful Mending | Added in patch 3.3.0.10623
+DELETE FROM npc_vendor WHERE item=50370;
+
+-- Arcanum of the Savage Gladiator (Alliance and horde versions) | Added in patch 3.3.0.10623
+DELETE FROM npc_vendor  WHERE item IN (50372,50373);
+
+-- Added in patch 3.3.0.10623
+DELETE FROM npc_vendor  WHERE item IN (
+50337, -- Greater Inscription of the Pinnacle
+50335, -- Greater Inscription of the Axe
+50336, -- Greater Inscription of the Crag
+50338); -- Greater Inscription of the Storm
+
+-- Arcanum of the Stalwart Protector | Added in patch 3.3.0.10623
+delete FROM npc_vendor  WHERE item = 50369;
+
+-- Arcanum of Torment | Added in patch 3.3.0.10623
+delete from npc_vendor where item=50367;
+
