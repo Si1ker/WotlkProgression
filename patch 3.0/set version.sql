@@ -13,6 +13,7 @@ General world changes
 Wintergrasp
 Weekly and daily quests
 Events
+Miscellaneous
 
 */
 
@@ -510,12 +511,9 @@ UPDATE `item_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry` IN (
 AND `Item`=49426; -- emblem of frost (assuming you are applying this to a clean core/db)
 
 
-
-
-
-
--- New stuff from mpfans
-
+-- = = = = = = = = =
+-- = Miscellaneous =
+-- = = = = = = = = =
 
 -- Cardinal Ruby
 update quest_template SET minlevel=90 WHERE id IN (14151);
