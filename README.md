@@ -1,7 +1,7 @@
 # WoltkProgression [Deprecated & Closed]
 Author: [Silker](https://github.com/Si1ker)
 
-Last update: May 2021
+Last update: May 2021 - Project closed, for further reference see [AzerothCore progression system](https://github.com/azerothcore/azerothcore-wotlk/issues/5248)
 
 - This repository contains all the files required to emulate the progression on World of Warcraft private servers running on [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk), from the version 3.0 to 3.3.5a
 - Each folder contains its own README file which will guide you on how to manage the changes and will describe what to expect from those changes
