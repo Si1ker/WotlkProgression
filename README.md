@@ -1,4 +1,4 @@
-# WoltkProgression
+# WotlkProgression
 Author: [Silker](https://github.com/Si1ker)
 * For Vanilla/TBC content, check [AzerothCore progression system](https://github.com/azerothcore/mod-progression-system)
 
