@@ -1,13 +1,13 @@
-# WoltkProgression [Deprecated & Closed]
+# WoltkProgression
 Author: [Silker](https://github.com/Si1ker)
+* For Vanilla/TBC content, check [AzerothCore progression system](https://github.com/azerothcore/mod-progression-system)
 
-Last update: May 2021 - Project closed, for further reference see [AzerothCore progression system](https://github.com/azerothcore/azerothcore-wotlk/issues/5248)
+Last update: Dic 2022
 
 - This repository contains all the files required to emulate the progression on World of Warcraft private servers running on [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk), from the version 3.0 to 3.3.5a
 - Each folder contains its own README file which will guide you on how to manage the changes and will describe what to expect from those changes
-- The updates work on a transactional scheme in which they are all linked, meaning you cannot apply one specific version other than the initial, you have the apply the 3.0 and then update all the way through from there to the version you want to setup your server
-- In order to apply the patch 3.0, your server must have a clean core and database
-
+- The updates work on a transactional scheme in which they are all linked, meaning you cannot apply one specific version other than the initial, you have to apply the 3.0 and then update all the way through from there to the version you want to setup your server
+- To apply the patch 3.0, your server must have a clean core and database
 
 ## Contents
 
