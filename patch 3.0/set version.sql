@@ -65,7 +65,7 @@ UPDATE `quest_template` SET `RewardItem1`=@NewLowerEmblem WHERE `ID`=24789;
 -- = = = = = = = = =
 
 -- Hide Emalon, Koralon and Toravon at Vaulth of Archavon
-UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (
+UPDATE `creature` SET `phaseMask` = 2 WHERE `id1` IN (
 33993, -- Emalon
 35013, -- Koralon
 38433); -- Toravon
