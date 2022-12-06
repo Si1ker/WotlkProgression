@@ -345,7 +345,7 @@ UPDATE `creature_template` SET `npcflag`=83 WHERE `entry`=28701;
 -- = = = = = = = = = = = = = = =
 
 -- Hide PvP vendors at Stormwind and Orgrimmar
-UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (
+UPDATE `creature` SET `phaseMask` = 2 WHERE `id1` IN (
 34060, 34063, 34038, -- Horde
 34075, 34084, 34078); -- Alliance
 
@@ -371,8 +371,8 @@ UPDATE `creature_template` SET `npcflag`=0 WHERE `entry` IN (
 );
 
 -- Remove items in heavy mount vendors (items start from item.level 245)
-@SET @StoneGuardMukar = 32296; -- horde
-@SET @KnightDameron = 32294; -- alliance
+SET @StoneGuardMukar = 32296; -- horde
+SET @KnightDameron = 32294; -- alliance
 
 DELETE FROM `npc_vendor` WHERE `entry` IN (@StoneGuardMukar, @KnightDameron) AND `item` IN (
 46057,
@@ -573,8 +573,8 @@ DELETE FROM npc_vendor  WHERE item IN (
 50338); -- Greater Inscription of the Storm
 
 -- Arcanum of the Stalwart Protector | Added in patch 3.3.0.10623
-delete FROM npc_vendor  WHERE item = 50369;
+DELETE FROM npc_vendor  WHERE item = 50369;
 
 -- Arcanum of Torment | Added in patch 3.3.0.10623
-delete from npc_vendor where item=50367;
+DELETE FROM npc_vendor where item=50367;
 
