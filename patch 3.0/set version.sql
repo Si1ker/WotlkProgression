@@ -280,7 +280,7 @@ UPDATE `item_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=43346 AND `
 -- = = = = = = = = = = = =
 
 -- Hide emblem vendors at Dalaran
-UPDATE `creature` SET `phaseMask` = 2 WHERE `id` IN (
+UPDATE `creature` SET `phaseMask` = 2 WHERE `id1` IN (
 33964, -- conquest ali
 33963, -- conquest horde
 35494, -- triumph ali
