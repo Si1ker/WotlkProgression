@@ -89,12 +89,14 @@ UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=31611 A
 -- Krik thir the Gatewatcher: 31612
 UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=31612 AND `Item`=@OldEmblem;
 --  - - - - - - - - Drak Tharon Keep - - - - - - - -
+-- The Prophet Tharon'ja: 31360
+UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=31360 AND `Item`=@OldEmblem;
 -- King Dred: 31349
 UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=31349 AND `Item`=@OldEmblem;
 -- Novos the Summoner: 31350
 UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=31350 AND `Item`=@OldEmblem;
--- Trollgore: 26630
-UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=26630 AND `Item`=@OldEmblem;
+-- Trollgore: 31362
+UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=31362 AND `Item`=@OldEmblem;
 --  - - - - - - - - Gundrak - - - - - - - -
 -- Gal darah: 31368
 UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=31368 AND `Item`=@OldEmblem;
