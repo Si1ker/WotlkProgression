@@ -272,9 +272,9 @@ UPDATE `creature_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry`=30061 
 UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=28860 AND `Item`=@OldEmblem;
 UPDATE `item_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=43347 AND `Item`=@OldEmblem; -- Satchel of Spoils [10mode]
 -- Sartharion (25): 31311
-UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=31311 AND `Item`=@NewHigherEmblem; -- Sartharion loot
-UPDATE `reference_loot_template` SET `Item`=@NewLowerEmblem WHERE  `Entry`=34349 AND `Item`=@NewHigherEmblem; -- Mini-bosses loot
-UPDATE `item_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=43346 AND `Item`=@NewHigherEmblem; -- Satchel of Spoils [25mode]
+UPDATE `creature_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry`=31311 AND `Item`=@OldEmblem; -- Sartharion loot
+UPDATE `reference_loot_template` SET `Item`=@NewHigherEmblem WHERE  `Entry`=34349 AND `Item`=@OldEmblem; -- Mini-bosses loot
+UPDATE `item_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry`=43346 AND `Item`=@OldEmblem; -- Satchel of Spoils [25mode]
 
 
 -- = = = = = = = = = = = =
