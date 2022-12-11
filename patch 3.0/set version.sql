@@ -512,6 +512,10 @@ UPDATE `item_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry` IN (
 54537) -- item: Heart-Shaped Box / event: Love is in the Air
 AND `Item`=49426; -- emblem of frost (assuming you are applying this to a clean core/db)
 
+-- Loot from "Bag of Fishing Treasures"
+-- Contains Epic gems (+20) - (added in 3.1)
+DELETE FROM `item_loot_template` WHERE  `Entry`=46007 AND `Item`=4;
+
 
 -- = = = = = = = = =
 -- = Miscellaneous =
