@@ -1,7 +1,7 @@
 /*
 
 Written by Silker | https://github.com/Si1ker
-This SQL update file will set your woltk server based on AzerothCore to the version latests 3.0 version
+This SQL update file will set your WotLK server based on AzerothCore to the version latests 3.0 version
 
 ==== INDEX ====
 Emblems
@@ -32,15 +32,15 @@ SET @NewHigherEmblem = 40753; -- valor
 -- = = = = = = = = = = =
 DELETE FROM `disables` WHERE `entry` IN (631, 658, 668, 632, 650, 649, 603, 249, 724);
 INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`) VALUES 
-(2, 631, 15, "", "", "WoltkProgression - Block ICC raid"),
-(2, 658, 3, "", "", "WoltkProgression - Block ICC dungeon"),
-(2, 668, 3, "", "", "WoltkProgression - Block ICC dungeon"),
-(2, 632, 3, "", "", "WoltkProgression - Block ICC dungeon"),
-(2, 650, 3, "", "", "WoltkProgression - Block ToC dungeon"),
-(2, 649, 15, "", "", "WoltkProgression - Block ToC raid"),
-(2, 603, 3, "", "", "WoltkProgression - Block Ulduar"),
-(2, 249, 3, "", "", "WoltkProgression - Block Onyxia"),
-(2, 724, 15, "", "", "WoltkProgression - Block Rubi Sanctum");
+(2, 631, 15, "", "", "WotLKProgression - Block ICC raid"),
+(2, 658, 3, "", "", "WotLKProgression - Block ICC dungeon"),
+(2, 668, 3, "", "", "WotLKProgression - Block ICC dungeon"),
+(2, 632, 3, "", "", "WotLKProgression - Block ICC dungeon"),
+(2, 650, 3, "", "", "WotLKProgression - Block ToC dungeon"),
+(2, 649, 15, "", "", "WotLKProgression - Block ToC raid"),
+(2, 603, 3, "", "", "WotLKProgression - Block Ulduar"),
+(2, 249, 3, "", "", "WotLKProgression - Block Onyxia"),
+(2, 724, 15, "", "", "WotLKProgression - Block Rubi Sanctum");
 
 
 -- = = = = = = = = = = =
@@ -273,7 +273,7 @@ UPDATE `creature_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=28860 A
 UPDATE `item_loot_template` SET `Item`=@NewLowerEmblem WHERE `Entry`=43347 AND `Item`=@OldEmblem; -- Satchel of Spoils [10mode]
 -- Sartharion (25): 31311
 UPDATE `creature_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry`=31311 AND `Item`=@OldEmblem; -- Sartharion loot
-UPDATE `reference_loot_template` SET `Item`=@NewHigherEmblem WHERE  `Entry`=34349 AND `Item`=@OldEmblem; -- Mini-bosses loot
+UPDATE `reference_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry`=34349 AND `Item`=@OldEmblem; -- Mini-bosses loot
 UPDATE `item_loot_template` SET `Item`=@NewHigherEmblem WHERE `Entry`=43346 AND `Item`=@OldEmblem; -- Satchel of Spoils [25mode]
 
 
@@ -331,7 +331,7 @@ DELETE FROM `npc_vendor` WHERE `entry`=@HaroldWinston AND `item` IN (51560,
 45689,
 45688);
 
--- Update woltk materials (needed on +20 gems) for TBC materials (for +16 gems)
+-- Update WotLK materials (needed on +20 gems) for TBC materials (for +16 gems)
 UPDATE `npc_vendor` SET `item`=36918 WHERE `entry`=@HaroldWinston AND `item`=36919;
 UPDATE `npc_vendor` SET `item`=36921 WHERE `entry`=@HaroldWinston AND `item`=36922;
 UPDATE `npc_vendor` SET `item`=36924 WHERE `entry`=@HaroldWinston AND `item`=36925;
@@ -435,18 +435,18 @@ DELETE FROM `npc_vendor` WHERE `entry` IN (@StoneGuardMukar, @KnightDameron) AND
 -- Disable weekly quests from Archmage Lan'dalock
 DELETE FROM `disables` WHERE `entry` IN (24580, 24582, 24584, 24581, 24583, 24579, 24585, 24587, 24586, 24588, 24589, 24590);
 INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`) VALUES 
-(1, 24580, 0, "", "", "WoltkProgression - Disable quest - Anub'Rekhan Must Die!"),
-(1, 24582, 0, "", "", "WoltkProgression - Disable quest - Instructor Razuvious Must Die!"),
-(1, 24584, 0, "", "", "WoltkProgression - Disable quest - Malygos Must Die!"),
-(1, 24581, 0, "", "", "WoltkProgression - Disable quest - Noth the Plaguebringer Must Die!"),
-(1, 24583, 0, "", "", "WoltkProgression - Disable quest - Patchwerk Must Die!"),
-(1, 24579, 0, "", "", "WoltkProgression - Disable quest - Sartharion Must Die!"),
-(1, 24585, 0, "", "", "WoltkProgression - Disable quest - Flame Leviathan Must Die!"),
-(1, 24587, 0, "", "", "WoltkProgression - Disable quest - Ignis the Furnace Master Must Die!"),
-(1, 24586, 0, "", "", "WoltkProgression - Disable quest - Razorscale Must Die!"),
-(1, 24588, 0, "", "", "WoltkProgression - Disable quest - XT-002 Deconstructor Must Die!"),
-(1, 24589, 0, "", "", "WoltkProgression - Disable quest - Lord Jaraxxus Must Die!"),
-(1, 24590, 0, "", "", "WoltkProgression - Disable quest - Lord Marrowgar Must Die!");
+(1, 24580, 0, "", "", "WotLKProgression - Disable quest - Anub'Rekhan Must Die!"),
+(1, 24582, 0, "", "", "WotLKProgression - Disable quest - Instructor Razuvious Must Die!"),
+(1, 24584, 0, "", "", "WotLKProgression - Disable quest - Malygos Must Die!"),
+(1, 24581, 0, "", "", "WotLKProgression - Disable quest - Noth the Plaguebringer Must Die!"),
+(1, 24583, 0, "", "", "WotLKProgression - Disable quest - Patchwerk Must Die!"),
+(1, 24579, 0, "", "", "WotLKProgression - Disable quest - Sartharion Must Die!"),
+(1, 24585, 0, "", "", "WotLKProgression - Disable quest - Flame Leviathan Must Die!"),
+(1, 24587, 0, "", "", "WotLKProgression - Disable quest - Ignis the Furnace Master Must Die!"),
+(1, 24586, 0, "", "", "WotLKProgression - Disable quest - Razorscale Must Die!"),
+(1, 24588, 0, "", "", "WotLKProgression - Disable quest - XT-002 Deconstructor Must Die!"),
+(1, 24589, 0, "", "", "WotLKProgression - Disable quest - Lord Jaraxxus Must Die!"),
+(1, 24590, 0, "", "", "WotLKProgression - Disable quest - Lord Marrowgar Must Die!");
 
 
 -- Enable dungeon daily quests
