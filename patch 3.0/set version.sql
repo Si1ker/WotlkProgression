@@ -339,7 +339,17 @@ UPDATE `npc_vendor` SET `item`=36927 WHERE `entry`=@HaroldWinston AND `item`=369
 UPDATE `npc_vendor` SET `item`=36930 WHERE `entry`=@HaroldWinston AND `item`=36931;
 UPDATE `npc_vendor` SET `item`=36933 WHERE `entry`=@HaroldWinston AND `item`=36934;
 
--- Disable Timothy Jones as a vendor, this is required to disable the epic gems recipes which were included in ToC 3.2, so let's remove the flag 128
+SET @MagistrixLambriesse = 31582; -- Horde <Emblem of Heroism Quartermaster>
+SET @ArcanistIvrenne = 31580; -- Alliance <Emblem of Heroism Quartermaster>
+-- Update WotLK materials (needed on +20 gems) for TBC materials (for +16 gems)
+UPDATE `npc_vendor` SET `item`=36918 WHERE `entry` IN (@MagistrixLambriesse,@ArcanistIvrenne) AND `item`=36919;
+UPDATE `npc_vendor` SET `item`=36921 WHERE `entry` IN (@MagistrixLambriesse,@ArcanistIvrenne) AND `item`=36922;
+UPDATE `npc_vendor` SET `item`=36924 WHERE `entry` IN (@MagistrixLambriesse,@ArcanistIvrenne) AND `item`=36925;
+UPDATE `npc_vendor` SET `item`=36927 WHERE `entry` IN (@MagistrixLambriesse,@ArcanistIvrenne) AND `item`=36928;
+UPDATE `npc_vendor` SET `item`=36930 WHERE `entry` IN (@MagistrixLambriesse,@ArcanistIvrenne) AND `item`=36931;
+UPDATE `npc_vendor` SET `item`=36933 WHERE `entry` IN (@MagistrixLambriesse,@ArcanistIvrenne) AND `item`=36934;
+
+-- Disable Timothy Jones as a vendor, this is required to disable the epic gems recipes which were included in ToC 3.2
 UPDATE `creature_template` SET `npcflag`=83 WHERE `entry`=28701;
 
 -- = = = = = = = = = = = = = = =
