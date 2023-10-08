@@ -1,8 +1,10 @@
-# WotlkProgression
-Author: [Silker](https://github.com/Si1ker)
-* For Vanilla/TBC content, check [AzerothCore progression system](https://github.com/azerothcore/mod-progression-system)
 
-Last update: Dic 2022
+📌 **Deprecation Notice**
+
+This repository is deprecated and no more work will be done on it. 
+- If you need a Vanilla/TBC/Wotlk supported progression module, check out [AzerothCore progression system](https://github.com/azerothcore/mod-progression-system)
+
+# WotlkProgression
 
 - This repository contains all the files required to emulate the progression on World of Warcraft private servers running on [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk), from the version 3.0 to 3.3.5a
 - Each folder contains its own README file which will guide you on how to manage the changes and will describe what to expect from those changes
